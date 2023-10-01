@@ -11,7 +11,7 @@ export default function Header() {
   return (
     <header className='flex justify-between items-center px-4 py-4 max-w-6xl mx-auto border-b shadow-sm sticky top-0 z-50 bg-green-700'>
       <div className='flex justify-start items-center'>
-        <img className="h-12 cursor-pointer" src="https://lh3.googleusercontent.com/fffd_n92QwSdVuSBqHX2JhR5mZ3O6E1EYPGc8AYiVk-PJFWBz89sbF1sj-AjR3mqust4SvCXKAVDBn-_PFrfVco=w16383" alt="home" onClick={()=>navigate("/")}/>
+        <img className="h-12 cursor-pointer" src="icon.png" alt="home" onClick={()=>navigate("/")}/>
         <h1 className='pl-4 text-white text-xl'>PLAY Daycare volunteer</h1>
       </div>
       <nav>

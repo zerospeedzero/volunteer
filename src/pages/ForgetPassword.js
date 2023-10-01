@@ -11,7 +11,7 @@ export default function ForgetPassword() {
       <h1 className='text-2xl text-center mt-6 font-bold text-green-800'>Forget password</h1>
       <div className='flex justify-center items-center flex-wrap px-6 py-12 mx-auto'>
         <div className='md:w-[67%] lg:w-[50%] mb-12 md:mb-6'>
-          <img className="w-full rounded-md" src="https://lh4.googleusercontent.com/_BQfoaONnvHtgxYxXNyuAzMfNcBt1J8qoFUeCONMvj-5uLQ6x9nowXcFnWF8AKT426SYXKhrM4TC3IM9XnZdbtwk9A5OsoJ2sr1YYTn_VRSPM7pYa00gwJpXmM62LLZw=w1280" alt="key"/>
+          <img className="w-full rounded-md" src="church.jpeg" alt="key"/>
         </div>
         <div className="w-full md:w-[67%] lg:w-[40%] lg:ml-20">
           <form>
