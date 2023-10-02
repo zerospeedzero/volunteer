@@ -2,6 +2,7 @@ import { BrowserRouter as Router, Routes, Route} from "react-router-dom";
 import Home from "./pages/Home";
 import SignIn from "./pages/SignIn";
 import SingUp from "./pages/SignUp";
+import PrivateRoute from "./components/PrivateRoute";
 import Profile from "./pages/Profile";
 import ForgetPassword from "./pages/ForgetPassword";
 import Activities from "./pages/Activities";
@@ -16,9 +17,11 @@ function App() {
         <Header/>
         <Routes>
           <Route path="/" element={<Home />} />
+          <Route path="/profile" element={<PrivateRoute/>}>
+            <Route path="/profile" element={<Profile />} />
+          </Route>
           <Route path="/SignIn" element={<SignIn/>} />
           <Route path="/SignUp" element={<SingUp />} />
-          <Route path="/Profile" element={<Profile />} />
           <Route path="/ForgetPassword" element={<ForgetPassword />} />
           <Route path="/Activities" element={<Activities />} />
         </Routes>

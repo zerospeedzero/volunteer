@@ -49,7 +49,7 @@ export default function SingUp() {
   return (
     <section className="max-w-6xl mx-auto">
       <h1 className='text-2xl text-center mt-6 font-bold text-green-800'>Sign Up</h1>
-      <div className='flex justify-center items-center flex-wrap px-6 py-12 mx-auto'>
+      <div className='flex justify-center items-center flex-wrap px-6 py-6 mx-auto'>
         <div className='md:w-[67%] lg:w-[50%] mb-12 md:mb-6'>
           <img className="w-full rounded-md" src="church.jpeg" alt="key"/>
         </div>
@@ -66,7 +66,7 @@ export default function SingUp() {
                 : 
                 (<AiFillEye className='absolute right-3 top-3 text-xl cursor-pointer' onClick={()=>setShowPassword((prevState)=>!prevState)}/>)}
             </div>
-            <div className='flex justify-between text-sm sm:text-md whitespace-nowrap'>
+            <div className='flex justify-between text-sm sm:text-lg whitespace-nowrap'>
               <p className='mb-6 '>Have a account?
                 <Link className="text-red-500 hover:text-red-700 transition duration-200 ease-in-out ml-1" to="/signin">Sign Up</Link>
               </p>
