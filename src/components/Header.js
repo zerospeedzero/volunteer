@@ -1,9 +1,21 @@
-import React from 'react'
+import { getAuth, onAuthStateChanged } from 'firebase/auth';
+import React, { useEffect } from 'react'
 import { useLocation, useNavigate } from 'react-router'
 export default function Header() {
+  const [pageState, setPageState] = React.useState("Sign In") 
   const location = useLocation();
   const navigate = useNavigate();
-  function pathMathRoute(route){
+  const auth = getAuth();
+  useEffect(()=> {
+    onAuthStateChanged(auth, (user) => {
+      if(user){
+        setPageState("Profile")
+      }else{
+        setPageState("Sign In")
+      }
+    })
+  }, [auth])
+  function pathMatchRoute(route){
     if(route === location.pathname){
       return true;
     }
@@ -16,9 +28,9 @@ export default function Header() {
       </div>
       <nav>
         <ul className='flex space-x-10'>
-          <li className={`pointer-cursor py-3 text-sm font-semibold text-gray-200 border-b-[3px] border-b-transparent ${pathMathRoute("/") && "text-white border-b-orange-500"}`}><a href="/">Home</a></li>
-          <li className={`pointer-cursor py-3 text-sm font-semibold text-gray-200 border-b-[3px] border-b-transparent ${pathMathRoute("/activities") && "text-white border-b-orange-500"}`}><a href="/activities">Activities</a></li>
-          <li className={`pointer-cursor py-3 text-sm font-semibold text-gray-200 border-b-[3px] border-b-transparent ${pathMathRoute("/signIn") && "text-white border-b-orange-500"}`}><a href="/signIn">Sign In</a></li>
+          <li className={`pointer-cursor py-3 text-sm font-semibold text-gray-200 border-b-[3px] border-b-transparent ${pathMatchRoute("/") && "text-white border-b-orange-500"}`}><a href="/">Home</a></li>
+          <li className={`pointer-cursor py-3 text-sm font-semibold text-gray-200 border-b-[3px] border-b-transparent ${pathMatchRoute("/activities") && "text-white border-b-orange-500"}`}><a href="/activities">Activities</a></li>
+          <li className={`pointer-cursor py-3 text-sm font-semibold text-gray-200 border-b-[3px] border-b-transparent ${(pathMatchRoute("/signIn") || pathMatchRoute("/profile")) && "text-white border-b-orange-500 cursor-pointer"}`} onClick={()=> navigate("/profile")}>{pageState}</li>
         </ul>
       </nav>
     </header>
