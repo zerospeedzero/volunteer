@@ -36,6 +36,8 @@ export default function Home() {
     const formDataCopy = {
       activity_id: id,
       userRef: auth.currentUser.uid,
+      userName: auth.currentUser.displayName,
+      userEmail: auth.currentUser.email,
       description: activities.find((activity) => activity.id === id).data.description,
       timestamp: serverTimestamp(),
       timereported: 0
@@ -51,8 +53,8 @@ export default function Home() {
       <h1 className='text-3xl text-center mt-4'>All activities</h1>
       {loading && <Spinner/>}
       <div>
-        {activities && activities.map((activity) => (
-          <div className='mt-4 p-4 bg-green-200'>
+        {activities && activities.map((activity, index) => (
+          <div key={index} className='mt-4 p-4 bg-green-200'>
             <div className='flex justify-start items-center text-xl mb-2'>
               <h3 className=''>Category: </h3>
               <p >{activity.data.category}</p>

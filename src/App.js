@@ -7,6 +7,7 @@ import Profile from "./pages/Profile";
 import ForgetPassword from "./pages/ForgetPassword";
 import Activities from "./pages/Activities";
 import CreateActivity from "./pages/CreateActivity";
+import Reports from "./pages/Reports";
 import Header from "./components/Header";
 import { ToastContainer } from "react-toastify";
 import 'react-toastify/dist/ReactToastify.css'
@@ -25,6 +26,7 @@ function App() {
           <Route path="/SignUp" element={<SingUp />} />
           <Route path="/ForgetPassword" element={<ForgetPassword />} />
           <Route path="/Activities" element={<Activities />} />
+          <Route path="/Reports" element={<Reports />} />
           <Route path="/CreateActivity" element={<CreateActivity />} />
         </Routes>
       </Router>

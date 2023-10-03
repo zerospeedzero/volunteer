@@ -4,8 +4,10 @@ import { addDoc, collection } from 'firebase/firestore'
 import { db } from '../firebase'
 import { toast } from 'react-toastify'
 import { serverTimestamp } from 'firebase/firestore'
+import { useNavigate } from 'react-router'
 
 export default function CreateActivity() {
+  const navigate = useNavigate()
   const [changeDetails, setChangeDetails] = React.useState(false)
   const [loading, setLoading] = React.useState(false)
   const onChange = (e) => {
@@ -29,6 +31,7 @@ export default function CreateActivity() {
     const docRef = await addDoc(collection(db, "activities"), formDataCopy)
     setLoading(false)
     toast.success("Activity created successfully")
+    navigate("/")
     console.log(docRef)
   }
   if (loading)  {
@@ -42,13 +45,13 @@ export default function CreateActivity() {
         <div className='flex justify-center items-center'>
           <button id="category" type="button" value="one" onClick={onChange}
             className={`px-4 py-2 mr-2 text-lg bg-green-200 text-white rounded-md shadow-md hover:shadow-lg active:shadow-lg transition ease-in-out hover:bg-slate-400 w-full 
-            ${type == "one" ? "bg-green-200 text-black" : "bg-slate-600 text-white"}`}
+            ${type === "one" ? "bg-green-200 text-black" : "bg-slate-600 text-white"}`}
           >
             One time
           </button>
           <button id="category" type="button" value="repeat" onClick={onChange}
             className={`px-4 py-2 ml-2 text-lg bg-green-200 text-white rounded-md shadow-md hover:shadow-lg active:shadow-lg transition ease-in-out hover:bg-slate-400 w-full
-            ${type == "one" ? "bg-green-200 text-black" : "bg-slate-600 text-white"}`}
+            ${type === "one" ? "bg-green-200 text-black" : "bg-slate-600 text-white"}`}
           >
             Repeat
           </button>
