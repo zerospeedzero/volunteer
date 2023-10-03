@@ -61,18 +61,11 @@ export default function Activities() {
   } 
   return (
     <div className='w-full max-w-[800px] mx-auto'>
-      <h1 className='text-2xl text-center mt-4'>Activities</h1>
+      <h1 className='text-2xl text-center mt-4'>My activities</h1>
       {loading ? <Spinner/> : (
         <div className="flex flex-row mt-4">
-          <aside className="w-[30%] bg-orange-200 p-4">
-            <h2 className='text-xl '>Menu</h2>
-            <ul className='mt-4'>
-              <Link to="/CreateActivity"><li className='mt-4 text-lg bg-green-100 rounded-md shadow-md hover:bg-gray-300 p-1'>Create activity</li></Link>
-              <Link to="/Reports"><li className='mt-4 text-lg bg-green-100 rounded-md shadow-md hover:bg-gray-300 p-1'>Report</li></Link>
-            </ul>
-          </aside>
-          <section className="w-[60%] ml-4 p-4 bg-green-200">
-            <h2 className='text-xl text-center'>My activities</h2>
+          <section className="w-[100%] ml-4 p-4 bg-green-200">
+            <h2 className='text-xl text-center'></h2>
             <div>
               {registrations && registrations.map((registration,index) => (
                 <form key={index} className='bg-white p-4'>

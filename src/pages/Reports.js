@@ -45,11 +45,11 @@ export default function Activities() {
   },[auth.currentUser])
   
   return (
-    <div className='w-full max-w-[800px] mx-auto'>
+    <div className='w-full max-w-[1000px] mx-auto'>
       <h1 className='text-2xl text-center mt-4'>Reports</h1>
       {loading ? <Spinner/> : (
-        <div className="flex flex-row mt-4">
-          <section className="w-[60%] ml-4 p-4 bg-green-200">
+        <div className="w-full flex flex-row mt-4 mx-auto">
+          <section className="w-[100%] ml-4 p-4 bg-green-200 mx-auto">
             <h2 className='text-xl text-center'>Families</h2>
             <div>
               {registrations && registrations.map((registration, index) => (

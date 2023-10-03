@@ -30,8 +30,9 @@ export default function Header() {
       <nav>
         <ul className='flex space-x-10'>
           <li className={`pointer-cursor py-3 text-sm font-semibold text-gray-200 border-b-[3px] border-b-transparent ${pathMatchRoute("/") && "text-white border-b-red-500"}`}><Link to="/">Home</Link></li>
-          <li className={`pointer-cursor py-3 text-sm font-semibold text-gray-200 border-b-[3px] border-b-transparent ${pathMatchRoute("/activities") && "text-white border-b-red-500"}`}><Link to="/activities">Activities</Link></li>
+          <li className={`pointer-cursor py-3 text-sm font-semibold text-gray-200 border-b-[3px] border-b-transparent ${pathMatchRoute("/activities") && "text-white border-b-red-500"}`}><Link to="/activities">My activities</Link></li>
           <li className={`pointer-cursor py-3 text-sm font-semibold text-gray-200 border-b-[3px] border-b-transparent ${(pathMatchRoute("/signIn") || pathMatchRoute("/profile")) && "text-white border-b-red-500 cursor-pointer"}`} onClick={()=> navigate("/profile")}>{pageState}</li>
+          <li className={`pointer-cursor py-3 text-sm font-semibold text-gray-200 border-b-[3px] border-b-transparent ${pathMatchRoute("/") && "text-white border-b-red-500"}`}><Link to="/Admin">Admin</Link></li>
         </ul>
       </nav>
     </header>
